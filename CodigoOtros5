@@ -1,0 +1,36 @@
+package mx.Generation;
+
+import java.util.Scanner;
+
+public class Codigo4 {
+	public static void main(String[] args) { // colocar todo dentro de main
+		Scanner s = new Scanner(System.in); // Colocar System.in
+		System.out.print("Introduzca un número: ");// Faltaba las comillas del final
+		String ni = s.nextLine();
+		int c = Integer.parseInt(ni); // Convertir a Int
+
+		int afo = 0;
+		int noAfo = 0;
+
+		while (c > 0) { // Cambiar el ni -> c
+			int digito = c % 10; // Cambiar el ni -> c -- no es necesario el parseo
+			if ((digito == 3) || (digito == 7) || (digito == 8) || (digito == 9)) {
+				afo++;
+			} else {
+				noAfo++;
+			}
+			c /= 10; // Cambiar el ni -> c
+			if (afo > noAfo) {
+				//Se cambia c a ni para que de el numero introducido
+				System.out.println("El " + ni + " es un número afortunado."); // Acomodar el println
+				break;
+			} else {
+				//Se cambia c a ni para que de el numero introducido
+				System.out.println("El " + ni + " no es un número afortunado.");
+				break;
+			}
+		}
+		s.close(); // Cerar el scanner
+	}
+
+}
